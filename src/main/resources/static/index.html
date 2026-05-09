@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaStore Auto - Gestão de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <div class="container glass-panel">
+        <header>
+            <h1>MegaStore Auto</h1>
+            <p>Gestão de Estoque Premium</p>
+        </header>
+
+        <section class="controls">
+            <button id="btnNovoVeiculo" class="btn primary">Novo Veículo</button>
+            
+            <div class="filters">
+                <select id="filterMarca">
+                    <option value="">Todas as Marcas</option>
+                </select>
+                <select id="filterStatus">
+                    <option value="">Qualquer Status</option>
+                    <option value="Disponível">Disponível</option>
+                    <option value="Vendido">Vendido</option>
+                </select>
+                <button id="btnFiltrar" class="btn secondary">Filtrar</button>
+            </div>
+        </section>
+
+        <section class="veiculos-grid" id="veiculosGrid">
+            <!-- Cards gerados via JS -->
+        </section>
+    </div>
+
+    <!-- Modal Novo Veículo -->
+    <div id="modalVeiculo" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close">&times;</span>
+            <h2>Cadastrar Veículo</h2>
+            <form id="formVeiculo">
+                <div class="form-group">
+                    <label>Marca:</label>
+                    <select id="selectMarca" required></select>
+                </div>
+                <div class="form-group">
+                    <label>Modelo:</label>
+                    <select id="selectModelo" required></select>
+                </div>
+                <div class="form-group">
+                    <label>Ano:</label>
+                    <input type="number" id="inputAno" required>
+                </div>
+                <div class="form-group">
+                    <label>Cor:</label>
+                    <input type="text" id="inputCor" required>
+                </div>
+                <div class="form-group">
+                    <label>Preço:</label>
+                    <input type="number" id="inputPreco" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label>Quilometragem:</label>
+                    <input type="number" id="inputKm" required>
+                </div>
+                <div class="form-group">
+                    <label>Status:</label>
+                    <select id="selectStatus" required>
+                        <option value="Disponível">Disponível</option>
+                        <option value="Vendido">Vendido</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn primary">Salvar Veículo</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
